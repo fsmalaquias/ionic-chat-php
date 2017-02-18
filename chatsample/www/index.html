@@ -38,11 +38,11 @@
   <body ng-app="chat">
 
     <ion-pane ng-controller="ChatController">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title title-center">Chat</h1>
-        </ion-header-bar>
-        <ion-content>
-                <ion-scroll zooming="false" direction="y" style="width:100%; height: 100%" delegate-handle="chatScroll">
+        <ion-nav-bar class="bar-stable" align-title=center"">
+            <ion-nav-title>Chat</ion-nav-title>
+        </ion-nav-bar>
+
+        <ion-content id="chatBody" delegate-handle="chatScroll" on-scroll="onScroll(this)">
                     <div class="list">
                         <a ng-repeat="message in messages" class="item" href="#" ng-class="{'item-avatar': message.id_device != myInfo.id, 'item-avatar-right': message.id_device == myInfo.id}">
                             <img src="./img/avatar-user.png">
@@ -50,7 +50,6 @@
                             <p>{{message.message}}</p>
                         </a>
                     </div>
-                </ion-scroll>
       </ion-content>
       <ion-footer-bar class="">
               <label class="item item-input" style="position:absolute; left:1px; width:100%">
