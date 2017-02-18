@@ -4,9 +4,9 @@ use \stdClass;
 $dbInfo = new stdClass();
 
 $dbInfo->host = "localhost";
-$dbInfo->username="dev4brot_jean";
-$dbInfo->password="juvenajean";
-$dbInfo->database="dev4brot_jean";
+$dbInfo->username="";
+$dbInfo->password="";
+$dbInfo->database="";
 
 // Opens a connection to a MySQL server
 $dbConnection=mysql_connect($dbInfo->host, $dbInfo->username, $dbInfo->password);
